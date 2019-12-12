@@ -19,6 +19,7 @@ steps:
 
       function Get-QueryResultsTable($token)
       {
+          if ($null -eq $token) throw('Missing token value')
           $authHeader = @{ 'Authorization' = 'Basic ' + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":" + $token)) }
           $backlogUrl = 'https://analytics.dev.azure.com/TBS-OCIO-ESP/gc-earb/_odata/v2.0/WorkItems?$select=Title,State&$filter=WorkItemType%20eq%20%27Meeting%27%20and%20State%20eq%20%27Committed%27&$expand=Children($select=Title,WorkItemType,Custom_Department,BacklogPriority,State)';
       
