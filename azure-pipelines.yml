@@ -1,9 +1,9 @@
-# Starter pipeline
-trigger:
-- master
+schedules:
+- cron: "0 0 * * *"
+  displayName: Daily midnight build
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: windows-latest
 
 steps:
 - task: PowerShell@2
