@@ -16,7 +16,7 @@ steps:
       $wikiTitle = $env:WIKI_TITLE
       $username = $env:WIKI_USER
       $password = $env:WIKI_PASSWORD
-      $azdotoken = $env:ADO_TOKEN
+      $token = $env:ADO_TOKEN
 
       function Get-QueryResultsTable($token)
       {
@@ -199,6 +199,6 @@ steps:
           }
       }
       
-      Edit-Page $wikiTitle (Get-QueryResultsTable $azdotoken)
+      Edit-Page $wikiTitle (Get-QueryResultsTable)
       
       Invoke-Logout
