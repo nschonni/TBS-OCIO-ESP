@@ -10,6 +10,10 @@ pool:
 
 steps:
 - task: PowerShell@2
+  env:
+    WIKI_USER: $(WIKI_USER)
+    WIKI_PASSWORD: $(WIKI_PASSWORD)
+    ADO_TOKEN: $(ADO_TOKEN)
   inputs:
     targetType: 'inline'
     script: |
